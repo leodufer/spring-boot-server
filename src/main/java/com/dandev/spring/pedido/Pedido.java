@@ -1,11 +1,12 @@
-package com.dandev.spring;
-
-import java.util.Date;
+package com.dandev.spring.pedido;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.dandev.spring.pizza.Pizza;
 
 @Entity
 public class Pedido{
@@ -13,14 +14,12 @@ public class Pedido{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @ManyToOne
     private Pizza pizza;
     private boolean borde;
     private String observacion;
-    private Date fecha;
-    private long total;
-    
-    public Pedido() {
-    }
+    private long totalPedido;
+    private int cantidad;
 
     public long getId() {
         return id;
@@ -53,20 +52,20 @@ public class Pedido{
     public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
-
-    public Date getFecha() {
-        return fecha;
+    
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
-    public long getTotal() {
-        return total;
+    public long getTotalPedido() {
+        return totalPedido;
     }
 
-    public void setTotal(long total) {
-        this.total = total;
+    public void setTotalPedido(long totalPedido) {
+        this.totalPedido = totalPedido;
     }
 }

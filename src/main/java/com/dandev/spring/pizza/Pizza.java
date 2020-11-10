@@ -1,4 +1,4 @@
-package com.dandev.spring;
+package com.dandev.spring.pizza;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

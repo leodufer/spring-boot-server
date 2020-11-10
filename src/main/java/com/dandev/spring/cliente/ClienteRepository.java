@@ -1,4 +1,4 @@
-package com.dandev.spring;
+package com.dandev.spring.cliente;
 
 
 import org.springframework.data.repository.CrudRepository;
